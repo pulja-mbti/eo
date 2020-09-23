@@ -1,7 +1,10 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+
 :root {
     --primary-bg-color: #400080;
     --primary-color: #ffffff;
-	--img-url: url('https://images.unsplash.com/photo-1600678031151-33e82a5c0821?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
+	--img-url: url('https://images.unsplash.com/photo-1600505438060-1a614975f6cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80');
 }
 
 

@@ -3,8 +3,8 @@
 	<head>
 		<link rel="stylesheet" href="./test_css.css">
 		<link rel="stylesheet" href="./tailwind.min.css">
-		<script src="./jquery.min.js"></script>
-		<script src="./test_js.js"></script>
+		<script src="./test/jquery.min.js"></script>
+		<script src="./test/test_js.js"></script>
 		<script>
 			window.onload=function() {
 				document.getElementById("preview").onclick=processText;
@@ -25,7 +25,6 @@
 				var   blk   = document.getElementById("result");
  	blk.innerHTML  =  resultString; 
 			}
-
 		</script>
 	</head>
 	
@@ -47,9 +46,26 @@
                     </div><br>
 		<h3 class="font-bold mr-4 text-sm">Text</h3>
 		<textarea id="inputbox" cols="40" rows="3"></textarea>
-		<div><button id="preview">Go</button></div>
+		<div><button id="preview">Go</button></div><br>
+		<script>
+		        function ChangeValue () {
+            pageContext.setAttribute("inputs", "document.getElementById("link").value");
+			document.documentElement.style.cssText= "--img-url: url('${inputs}')";
+        }
+	
+		function css(property, value) {
+    for (var i=0; i<document.styleSheets.length;i++) {//Loop through all styles
+        //Try add rule
+        try { document.styleSheets[i].insertRule('{'+property+':'+value+'}', document.styleSheets[i].cssRules.length);
+        } 
+    }
+}
+		</script>
+		<h3 class="font-bold mr-4 text-sm">Background</h3>
+		<textarea id="link" cols="40" rows="1"></textarea>
+		<div><button onclick="css('')">Go</button></div>
                 </div>
 
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div id="thumbnail"><div id="result" style="color:white; margin:100px; font-size:110"></div></div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><div id="thumbnail"><div id="result" style="color:white; margin:100px; font-size:110; font-family: "Noto Sans KR", sans-serif"></div></div>
 	</body>
 </html>
